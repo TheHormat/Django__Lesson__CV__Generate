@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row m-5">
+            <div class="col-md-12">
+                <h1>CV Generator</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-md-12">
+                {% if messages %}
+
+                    {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+
+                {% endif %}
+                <hr>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-md-12">
+                <h4>Please fill out your details</h4>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-md-7">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input placeholder="Eg John Doe" type="text" class="form-control" id="name" name="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input placeholder="Eg demo@gmail.com" type="email" class="form-control" id="email"
+                            name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Phone</label>
+                        <input placeholder="Eg 9999999999" type="text" class="form-control" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">About You</label>
+                        <textarea placeholder="Write something about you" type="text" class="form-control" id="summary"
+                            name="summary"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Degree</label>
+                        <input placeholder="B-Tech Information Technology" type="text" class="form-control" id="degree"
+                            name="degree">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">School</label>
+                        <input placeholder="MIT" type="text" class="form-control" id="school" name="school">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="">University</label>
+                        <input placeholder="MIT" type="text" class="form-control" id="university" name="university">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Previous Work</label>
+                        <textarea placeholder="Programmer @ XYZ" type="text" class="form-control" id="previous_work"
+                            name="previous_work"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Skills</label>
+                        <textarea placeholder="eg C, C++, Python" type="text" class="form-control" id="skills"
+                            name="skills"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
