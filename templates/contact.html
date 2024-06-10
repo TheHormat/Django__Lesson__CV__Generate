@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row m-5">
+            <div class="col-md-12">
+                <h1>Contact Page</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-md-12">
+                {% if messages %}
+
+                    {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+
+                {% endif %}
+                <hr>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-md-12">
+                <h4>Please fill out your details</h4>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-md-7">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input placeholder="Eg John Doe" type="text" class="form-control" id="name" name="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input placeholder="Eg demo@gmail.com" type="email" class="form-control" id="email"
+                            name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Message</label>
+                        <textarea placeholder="Write message" type="text" class="form-control" id="message"
+                            name="message"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
